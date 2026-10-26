@@ -1,0 +1,22 @@
+name: CI Maven Project
+on: [push, pull_request]
+jobs:
+  test-application-job:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: java-8-test
+        run: |
+          apt install -y openjdk-8-jre
+          mvn clean install
+
+      - name: java-11-test
+        run: |
+          apt install -y openjdk-11-jre
+          mvn clean install
+
+      - name: java-18-test
+        run: |
+          apt install -y openjdk-18-jre
+          mvn clean install
