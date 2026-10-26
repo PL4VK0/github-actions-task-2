@@ -3,6 +3,8 @@ on: [push, pull_request]
 jobs:
   test-application-job:
     runs-on: ubuntu-22.04
+    env:
+      APP_PORT: 4242
     steps:
       - uses: actions/checkout@v6
 
