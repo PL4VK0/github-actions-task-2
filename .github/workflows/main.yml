@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: $JAVA_VER
+          java-version: ${{ matrix.JAVA_VER }}
       - run: mvn clean test
       #- name: java-8-test
       #  run: |
